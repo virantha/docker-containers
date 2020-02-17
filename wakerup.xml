@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container>
+  <Name>WakerUp</Name>
+  <Description>
+    Monitor log files for messages and send WOL packets
+  </Description>
+  <Registry>https://registry.hub.docker.com/u/virantha/wakerup/</Registry>
+  <GitHub>https://github.com/virantha/wakerup</GitHub>
+  <Repository>virantha/wakerup</Repository>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Networking>
+    <Mode>host</Mode>
+  </Networking>
+  <Environment>
+    <Variable>
+      <Name>EDGE</Name>
+      <Value>0</Value>
+    </Variable>
+  </Environment>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/system</HostDir>
+      <ContainerDir>/logs</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <WebUI>http://[IP]:[PORT:22]/</WebUI>
+  <Banner>https://www.python.org/static/img/python-logo.png</Banner>
+  <Icon>https://lh5.googleusercontent.com/-zhGeNuhyPc0/AAAAAAAAAAI/AAAAAAAAAFo/Zz3N6Grpz8k/photo.jpg?sz=48</Icon>
+</Container>
