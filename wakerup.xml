@@ -2,7 +2,10 @@
 <Container>
   <Name>WakerUp</Name>
   <Description>
-    Monitor log files for messages and send WOL packets
+    Monitor log files for messages and send WOL packets.  Also, monitor a Plex server for idle and suspend it.
+    [br][br][b][u][span style='color: #E80000;']Configuration[/span][/u][/b][br]&amp;#13;&#13;
+    [b]/config[/b] : Storing all WakerUp config files [br]&amp;#13;&#13;
+    [b]PLEX_TOKEN[/b] : Plex Token for logging in to your server [a href='https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-plex-token/'] (see how to find it) [/a] [br]&amp;#13;&#13;
   </Description>
   <Registry>https://registry.hub.docker.com/u/virantha/wakerup/</Registry>
   <GitHub>https://github.com/virantha/wakerup</GitHub>
@@ -17,8 +20,17 @@
       <Name>EDGE</Name>
       <Value>0</Value>
     </Variable>
+    <Variable>
+      <Name>PLEX_TOKEN</Name>
+      <Value>0</Value>
+    </Variable>
   </Environment>
   <Data>
+    <Volume>
+      <HostDir></HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
     <Volume>
       <HostDir>/mnt/user/system</HostDir>
       <ContainerDir>/logs</ContainerDir>
