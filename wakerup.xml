@@ -17,6 +17,11 @@
   </Networking>
   <Environment>
     <Variable>
+      <Name>PLEX_SERVER</Name>
+      <Value>plex</Value>
+    </Variable>
+
+    <Variable>
       <Name>PLEX_TOKEN</Name>
       <Value>0</Value>
     </Variable>
@@ -27,15 +32,7 @@
     <Variable>
       <Name>PLEX_PASSWORD</Name>
       <Value></Value>
-      <Mask>True</Mask>
     </Variable>
-    <Variable>
-      <Name>PLEX_SERVER</Name>
-      <Value>plex</Value>
-      <Description>Name or ip of your plex server on your local network</Description>
-      <Required>True</Required>
-    </Variable>
-
   </Environment>
   <Data>
     <Volume>
@@ -49,6 +46,10 @@
       <Mode>rw</Mode>
     </Volume>
   </Data>
+  <Config Name="Plex Token" Target="PLEX_TOKEN" Default="" Description="Plex Token provided by Plex for logging into your server" Type="Variable" Display="always" Required="true" Mask="true"></Config>
+  <Config Name="Plex Server UNIX Username" Target="PLEX_USER" Default="" Description="Your UNIX username for logging in to the machine running Plex" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="Plex Server UNIX Password" Target="PLEX_PASSWORD" Default="" Description="Your UNIX password for logging in to the machine running Plex" Type="Variable" Display="always" Required="true" Mask="true"></Config>
+  <Config Name="Plex Server ip" Target="PLEX_SERVER" Default="" Description="Your Plex server's IP" Type="Variable" Display="always" Required="true" Mask="false"></Config>
   <WebUI>http://[IP]:[PORT:22]/</WebUI>
   <Banner>https://www.python.org/static/img/python-logo.png</Banner>
   <Icon>https://lh5.googleusercontent.com/-zhGeNuhyPc0/AAAAAAAAAAI/AAAAAAAAAFo/Zz3N6Grpz8k/photo.jpg?sz=48</Icon>
