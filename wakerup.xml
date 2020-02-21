@@ -9,8 +9,8 @@
     [b]/config[/b] : Mount point for storing all WakerUp config files [br]&amp;#13;&#13;
     [b]/logs[/b] : Mount point for wherever your log files are written to [br]&amp;#13;&#13;
     [b]PLEX_USERNAME[/b] : Unix username to ssh into your plex server [br]&amp;#13;&#13;
-    [b]PLEX_PASSWORD[/b] : Unix password to ssh into your plex server. Supply this for at least one docker run, and then you can remove it
-                           It will be encrypted and stored in your /config directory for future runs
+    [b]PLEX_PASSWORD[/b] : Unix password to ssh into your plex server. Supply this for at least one docker run, and then you can clear it. 
+                           (It will be encrypted and stored in your /config directory for future runs)
                            [br]&amp;#13;&#13;
     [b]PLEX_SERVER[/b] : IP address or name of your plex server on the local network [br]&amp;#13;&#13;
     [b]PLEX_MAC_ADDR[/b] : MAC address of your plex server on the local network (to send the WOL packet) [br]&amp;#13;&#13;
