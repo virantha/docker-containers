@@ -24,6 +24,16 @@
       <Name>PLEX_TOKEN</Name>
       <Value>0</Value>
     </Variable>
+    <Variable>
+      <Name>PLEX_USER</Name>
+      <Value></Value>
+    </Variable>
+    <Variable>
+      <Name>PLEX_PASSWORD</Name>
+      <Value></Value>
+      <Mask>True</Mask>
+    </Variable>
+
   </Environment>
   <Data>
     <Volume>
