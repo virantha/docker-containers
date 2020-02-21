@@ -15,25 +15,6 @@
   <Networking>
     <Mode>host</Mode>
   </Networking>
-  <Environment>
-    <Variable>
-      <Name>PLEX_SERVER</Name>
-      <Value>plex</Value>
-    </Variable>
-
-    <Variable>
-      <Name>PLEX_TOKEN</Name>
-      <Value>0</Value>
-    </Variable>
-    <Variable>
-      <Name>PLEX_USER</Name>
-      <Value></Value>
-    </Variable>
-    <Variable>
-      <Name>PLEX_PASSWORD</Name>
-      <Value></Value>
-    </Variable>
-  </Environment>
   <Data>
     <Volume>
       <HostDir></HostDir>
