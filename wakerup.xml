@@ -2,9 +2,21 @@
 <Container>
   <Name>WakerUp</Name>
   <Description>
-    Monitor log files for messages and send WOL packets.  Also, monitor a Plex server for idle and suspend it.
+    Monitors a Plex server for inactivity, and puts it to sleep after a specified amount of time.  It then
+    monitors the given log file (usually from a router showing firewall activity on port 32400) for activity
+    and sends a Wake-On-Lan (WOL) packet to the server to wake it up.
     [br][br][b][u][span style='color: #E80000;']Configuration[/span][/u][/b][br]&amp;#13;&#13;
-    [b]/config[/b] : Storing all WakerUp config files [br]&amp;#13;&#13;
+    [b]/config[/b] : Mount point for storing all WakerUp config files [br]&amp;#13;&#13;
+    [b]/logs[/b] : Mount point for wherever your log files are written to [br]&amp;#13;&#13;
+    [b]PLEX_USERNAME[/b] : Unix username to ssh into your plex server [br]&amp;#13;&#13;
+    [b]PLEX_PASSWORD[/b] : Unix password to ssh into your plex server. Supply this for at least one docker run, and then you can remove it
+                           It will be encrypted and stored in your /config directory for future runs
+                           [br]&amp;#13;&#13;
+    [b]PLEX_SERVER[/b] : IP address or name of your plex server on the local network [br]&amp;#13;&#13;
+    [b]PLEX_MAC_ADDR[/b] : MAC address of your plex server on the local network (to send the WOL packet) [br]&amp;#13;&#13;
+    [b]PLEX_IDLE_TIMEOUT[/b] : Time to wait in seconds before putting Plex server to sleep [br]&amp;#13;&#13;
+    [b]PLEX_LOG_FILENAME[/b] : Path to your router's log file (e.g. /logs/syslog) [br]&amp;#13;&#13;
+    [b]PLEX_REGEX[/b] : Text or a regex to search for in your log file to wakeup your plex server [br]&amp;#13;&#13;
     [b]PLEX_TOKEN[/b] : Plex Token for logging in to your server [a href='https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-plex-token/'] (see how to find it) [/a] [br]&amp;#13;&#13;
   </Description>
   <Registry>https://registry.hub.docker.com/u/virantha/wakerup/</Registry>
