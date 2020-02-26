@@ -17,7 +17,7 @@
     [b]PLEX_IDLE_TIMEOUT[/b] : Time to wait in seconds before putting Plex server to sleep [br]&amp;#13;&#13;
     [b]PLEX_LOG_FILENAME[/b] : Path to your router's log file (e.g. /logs/syslog) [br]&amp;#13;&#13;
     [b]PLEX_REGEX[/b] : Text or a regex to search for in your log file to wakeup your plex server [br]&amp;#13;&#13;
-    [b]PLEX_SCAN_INTERVAL[/b] : Minimum time in seconds between making Plex check for new media [br]&amp;#13;&#13;
+    [b]PLEX_SCAN_INTERVAL[/b] : Minimum time in seconds between making Plex check for new media for each libary. e.g. movie:43200,show:43200,photo:86400,artist:172800  [br]&amp;#13;&#13;
     [b]PLEX_TOKEN[/b] : Plex Token for logging in to your server [a href='https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-plex-token/'] (see how to find it) [/a] [br]&amp;#13;&#13;
   </Description>
   <Registry>https://registry.hub.docker.com/u/virantha/wakerup/</Registry>
@@ -45,10 +45,11 @@
   <Config Name="Plex Server UNIX Password" Target="PLEX_PASSWORD" Default="" Description="Your UNIX password for the machine running Plex" Type="Variable" Display="always" Required="false" Mask="true"></Config>
   <Config Name="Plex Server ip" Target="PLEX_SERVER" Default="plex" Description="Your Plex server's IP" Type="Variable" Display="always" Required="true" Mask="false"></Config>
   <Config Name="Plex Server MAC" Target="PLEX_MAC_ADDR" Default="" Description="Your Plex server's MAC Addr (00:00:00:00:00:00)" Type="Variable" Display="always" Required="true" Mask="false"></Config>
-  <Config Name="Plex Server Idle Time" Target="PLEX_IDLE_TIMEOUT" Default="600" Description="Time in seconds to wait after server becomes idle before going to sleep (10 min=600)" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="Plex Server Idle Time" Target="PLEX_IDLE_TIMEOUT" Default="movie:43200,show:43200,photo:86400,artist:172800" Description="Time in seconds to wait after server becomes idle before going to sleep (10 min=600)" Type="Variable" Display="always" Required="true" Mask="false"></Config>
   <Config Name="Plex Server Scan Interval" Target="PLEX_SCAN_INTERVAL" Default="600" Description="Time in seconds before triggering a library rescan (Use 0 to disable)" Type="Variable" Display="always" Required="true" Mask="false"></Config>
   <Config Name="Router log file" Target="PLEX_LOG_FILENAME" Default="/logs/syslog" Description="Location of syslog from your router" Type="Variable" Display="always" Required="true" Mask="false"></Config>
   <Config Name="Router regex" Target="PLEX_REGEX" Default="DPT=32400" Description="Regex for matching Plex server activity in your router log file" Type="Variable" Display="always" Required="true" Mask="false"></Config>
+  <Config Name="DEBUG" Target="PLEX_DEBUG" Default="0" Description="Set to 1 for debug logs" Type="Variable" Display="advanced" Required="true" Mask="false"></Config>
 
   <Icon>https://raw.githubusercontent.com/virantha/docker-containers/master/images/wakerup.png</Icon>
 </Container>
