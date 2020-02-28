@@ -17,9 +17,13 @@
     [b]PLEX_IDLE_TIMEOUT[/b] : Time to wait in seconds before putting Plex server to sleep [br]&amp;#13;&#13;
     [b]PLEX_LOG_FILENAME[/b] : Path to your router's log file (e.g. /logs/syslog) [br]&amp;#13;&#13;
     [b]PLEX_REGEX[/b] : Text or a regex to search for in your log file to wakeup your plex server [br]&amp;#13;&#13;
-    [b]PLEX_SCAN_INTERVAL[/b] : Minimum time in seconds between making Plex check for new media for each libary. e.g. movie:43200,show:43200,photo:86400,artist:172800  [br]&amp;#13;&#13;
+    [b]PLEX_SCAN_INTERVAL[/b] : Minimum time in seconds between making Plex check for new media for each libary. Use zero for no scheduled checking.
+         e.g. movie:43200,show:43200,photo:86400,artist:172800  [br]&amp;#13;&#13;
     [b]PLEX_TOKEN[/b] : Plex Token for logging in to your server [a href='https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-plex-token/'] (see how to find it) [/a] [br]&amp;#13;&#13;
   </Description>
+  <Overview>
+    Sleeps a Plex server after a specified idle time, and wakes it back up based on firewall logs.
+  </Overview>
   <Registry>https://registry.hub.docker.com/u/virantha/wakerup/</Registry>
   <GitHub>https://github.com/virantha/wakerup</GitHub>
   <Repository>virantha/wakerup</Repository>
@@ -40,6 +44,7 @@
       <Mode>rw</Mode>
     </Volume>
   </Data>
+  <WebUI></WebUI>
   <Config Name="Plex Token" Target="PLEX_TOKEN" Default="" Description="Plex Token from Plex for logging into your server" Type="Variable" Display="always" Required="true" Mask="true"></Config>
   <Config Name="Plex Server UNIX Username" Target="PLEX_USER" Default="" Description="Your UNIX username for the machine running Plex" Type="Variable" Display="always" Required="true" Mask="false"></Config>
   <Config Name="Plex Server UNIX Password" Target="PLEX_PASSWORD" Default="" Description="Your UNIX password for the machine running Plex" Type="Variable" Display="always" Required="false" Mask="true"></Config>
